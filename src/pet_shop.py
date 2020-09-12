@@ -13,5 +13,11 @@ def get_pet_shop_name(shop_name):
 #     sum = get_total_cash(self.cc_pet_shop)
 #     self.assertEqual(1000, sum)
 
-def get_total_cash(shop_cash):
-    return shop_cash["admin"]["total_cash"]
+def get_total_cash(total_shop_cash):
+    return total_shop_cash["admin"]["total_cash"]
+
+
+def add_or_remove_cash(total_cash,transaction_amount):
+    total_cash["admin"]["total_cash"] = total_cash["admin"]["total_cash"] + transaction_amount
+
+ 
