@@ -4,8 +4,8 @@
 #         name = get_pet_shop_name(self.cc_pet_shop)
 #         self.assertEqual("Camelot of Pets", name)
 
-def get_pet_shop_name(shop_name):
-    return shop_name["name"]
+def get_pet_shop_name(pet_shop):
+    return pet_shop["name"]
 
 
 # @unittest.skip("delete this line to run the test")
@@ -13,12 +13,12 @@ def get_pet_shop_name(shop_name):
 #     sum = get_total_cash(self.cc_pet_shop)
 #     self.assertEqual(1000, sum)
 
-def get_total_cash(total_shop_cash):
-    return total_shop_cash["admin"]["total_cash"]
+def get_total_cash(pet_shop):
+    return pet_shop["admin"]["total_cash"]
 
 
-def add_or_remove_cash(total_cash,transaction_amount):
-    total_cash["admin"]["total_cash"] = total_cash["admin"]["total_cash"] + transaction_amount
+def add_or_remove_cash(pet_shop,transaction_amount):
+    pet_shop["admin"]["total_cash"] += transaction_amount
 
 
 # @unittest.skip("delete this line to run the test")
@@ -26,8 +26,8 @@ def add_or_remove_cash(total_cash,transaction_amount):
 #     sold = get_pets_sold(self.cc_pet_shop)
 #     self.assertEqual(0, sold)
 
-def get_pets_sold(pets_sold):
-    return pets_sold["admin"]["pets_sold"]
+def get_pets_sold(pet_shop):
+    return pet_shop["admin"]["pets_sold"]
 
 #     @unittest.skip("delete this line to run the test")
 # def test_increase_pets_sold(self):
