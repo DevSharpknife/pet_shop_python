@@ -37,3 +37,15 @@ def get_pets_sold(pet_shop):
 
 def increase_pets_sold(pet_shop, sold_pets):
     pet_shop["admin"]["pets_sold"] += sold_pets
+
+# @unittest.skip("delete this line to run the test")
+# def test_stock_count(self):
+#     count = get_stock_count(self.cc_pet_shop)
+#     self.assertEqual(6, count)
+
+def get_stock_count(pet_shop):
+    return len(pet_shop["pets"])
+    # pet_count = 0
+    # for pet in pet_shop["pets"]:
+    #     pet_count += 1
+    # return pet_count    
