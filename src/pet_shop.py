@@ -54,9 +54,19 @@ def get_customer_cash(customer):
 def remove_customer_cash(customer, transaction_amount):
     customer["cash"] -= transaction_amount
 
-    # def test_customer_pet_count(self):
-    #     count = get_customer_pet_count(self.customers[0])
-    #     self.assertEqual(0, count)
-
 def get_customer_pet_count(customer):
     return len(customer["pets"])
+
+def add_pet_to_customer(customer, new_pet):
+    customer["pets"].append(new_pet)
+
+# def test_customer_can_afford_pet__sufficient_funds(self):
+#     customer = self.customers[0]
+#     can_buy_pet = customer_can_afford_pet(customer, self.new_pet)
+#     self.assertEqual(True, can_buy_pet)
+
+def customer_can_afford_pet(customer, new_pet):
+    if customer["cash"] >= new_pet["price"]:
+        return True
+    else:
+        return False
