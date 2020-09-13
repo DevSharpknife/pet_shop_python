@@ -40,26 +40,13 @@ def find_pet_by_name(pet_shop, name):
         if pet["name"] == name:
             return pet            
 
-        # @unittest.skip("delete this line to run the test")
-        # def test_remove_pet_by_name(self):
-        #     remove_pet_by_name(self.cc_pet_shop, "Arthur")
-        #     pet = find_pet_by_name(self.cc_pet_shop,"Arthur")
-        #     self.assertIsNone(pet)
+def remove_pet_by_name(pet_shop, pet_name):
+    for pet in pet_shop["pets"]:
+        if pet["name"] == pet_name:
+            pet_shop["pets"].remove(pet)
 
-            # def remove_pet_by_name(pet_shop, pet_name):
-            #     for pet in pet_shop["pets"]:
-            #         if pet["name"] == pet_name:
-            #             del(pet)
-            #     return(pet)
-            
-        # @unittest.skip("delete this line to run the test")
-        # def test_add_pet_to_stock(self):
-        #     add_pet_to_stock(self.cc_pet_shop, self.new_pet)
-        #     count = get_stock_count(self.cc_pet_shop)
-        #     self.assertEqual(7, count)
-
-            # def add_pet_to_stock(pet_shop, new_pet):
-            #     pet_shop["pets"]
+def add_pet_to_stock(pet_shop, new_pet):
+    pet_shop["pets"].append(new_pet)
 
 def get_customer_cash(customer):
     return customer["cash"]
@@ -67,8 +54,6 @@ def get_customer_cash(customer):
 def remove_customer_cash(customer, transaction_amount):
     customer["cash"] -= transaction_amount
 
-# def add_or_remove_cash(pet_shop,transaction_amount):
-#     pet_shop["admin"]["total_cash"] += transaction_amount
 
 # @unittest.skip("delete this line to run the test")
 # def test_add_pet_to_stock(self):
