@@ -54,9 +54,9 @@ def get_customer_cash(customer):
 def remove_customer_cash(customer, transaction_amount):
     customer["cash"] -= transaction_amount
 
+    # def test_customer_pet_count(self):
+    #     count = get_customer_pet_count(self.customers[0])
+    #     self.assertEqual(0, count)
 
-# @unittest.skip("delete this line to run the test")
-# def test_add_pet_to_stock(self):
-#     add_pet_to_stock(self.cc_pet_shop, self.new_pet)
-#     count = get_stock_count(self.cc_pet_shop)
-#     self.assertEqual(7, count)
+def get_customer_pet_count(customer):
+    return len(customer["pets"])
