@@ -77,6 +77,7 @@ class TestPetShop(unittest.TestCase):
 
     def test_pet_shop_name(self):
         name = get_pet_shop_name(self.cc_pet_shop)
+        # EQUALS ABOVE SHOWS THE FUNCTION WILL REQUIRE A RETURN STATEMENT TO GIVE THE VARIABLE NAME
         self.assertEqual("Camelot of Pets", name)
 
     def test_total_cash(self):
@@ -170,7 +171,7 @@ class TestPetShop(unittest.TestCase):
     # These are 'integration' tests so we want multiple asserts.
     # If one fails the entire test should fail
     #
-    @unittest.skip("delete this line to run the test")
+
     def test_sell_pet_to_customer__pet_found(self):
         customer = self.customers[0]
         pet = find_pet_by_name(self.cc_pet_shop,"Arthur")

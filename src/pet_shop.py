@@ -6,7 +6,7 @@ def get_pet_shop_name(pet_shop):
 def get_total_cash(pet_shop):
     return pet_shop["admin"]["total_cash"]
 
-def add_or_remove_cash(pet_shop,transaction_amount):
+def add_or_remove_cash(pet_shop, transaction_amount):
     pet_shop["admin"]["total_cash"] += transaction_amount
 
 def get_pets_sold(pet_shop):
@@ -27,7 +27,7 @@ def get_pets_by_breed(pet_shop, breed):
     pet_by_breed = []
     for pet in pet_shop["pets"]:
         if pet["breed"] == breed:
-            pet_by_breed.append(breed)
+            pet_by_breed.append(pet)
     return pet_by_breed
 
 def find_pet_by_name(pet_shop, pet_name):
@@ -60,13 +60,25 @@ def get_customer_pet_count(customer):
 def add_pet_to_customer(customer, new_pet):
     customer["pets"].append(new_pet)
 
-# def test_customer_can_afford_pet__sufficient_funds(self):
-#     customer = self.customers[0]
-#     can_buy_pet = customer_can_afford_pet(customer, self.new_pet)
-#     self.assertEqual(True, can_buy_pet)
-
 def customer_can_afford_pet(customer, new_pet):
     if customer["cash"] >= new_pet["price"]:
         return True
     else:
         return False
+
+#     def test_sell_pet_to_customer__pet_found(self):
+#         customer = self.customers[0]
+#         pet = find_pet_by_name(self.cc_pet_shop,"Arthur")
+
+#         sell_pet_to_customer(self.cc_pet_shop, pet, customer)
+
+#         self.assertEqual(1, get_customer_pet_count(customer))
+#         self.assertEqual(1, get_pets_sold(self.cc_pet_shop))
+#         self.assertEqual(100, get_customer_cash(customer))
+#         self.assertEqual(1900, get_total_cash(self.cc_pet_shop))
+
+# def sell_pet_to_customer(pet_shop, pet, customer):
+#    add_pet_to_customer(customer, new_pet),
+#    remove_pet_by_name(pet_shop, pet_name)  
+
+
